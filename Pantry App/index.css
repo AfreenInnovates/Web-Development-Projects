@@ -1,0 +1,198 @@
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.container img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 25px;
+}
+
+.container input {
+  background-color: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  color: #495057;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+  padding: 14px;
+  width: calc(100% - 28px);
+  text-align: center;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.container input:focus {
+  outline: none;
+  border-color: #7048e8;
+  box-shadow: 0 0 0 3px rgba(112, 72, 232, 0.1);
+}
+
+.container input::placeholder {
+  color: #7a869a;
+}
+
+.container .add-button {
+  background-color: #7048e8;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  padding: 14px;
+  width: calc(100% - 28px);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.container .add-button:hover {
+  background-color: #5f3dc4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(112, 72, 232, 0.2);
+}
+
+.container .add-button:active {
+  transform: translateY(2px);
+}
+
+#shopping-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  justify-content: center;
+}
+
+#shopping-list li {
+  background-color: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 25px;
+  color: #495057;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 24px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  flex: 0 1 auto;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+#shopping-list li:hover {
+  background-color: #fff3f3;
+  border-color: #ffcdd2;
+  color: #e53935;
+}
+
+#shopping-list li:active {
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .container input,
+  .container .add-button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  #shopping-list {
+    gap: 8px;
+  }
+
+  #shopping-list li {
+    font-size: 14px;
+    padding: 10px 16px;
+    height: 40px;
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  #shopping-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toast {
+  padding: 14px 28px;
+  border-radius: 12px;
+  margin-top: 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideIn 0.3s forwards, fadeOut 0.3s 2.7s forwards;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.toast-success {
+  background-color: #00c853;
+  color: white;
+}
+
+.toast-error {
+  background-color: #ff1744;
+  color: white;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
