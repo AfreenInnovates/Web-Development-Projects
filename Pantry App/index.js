@@ -9,7 +9,7 @@ import {
 
 const appSettings = {
   databaseURL:
-    "",
+    "{your firebase db url}",
 };
 
 const app = initializeApp(appSettings);
