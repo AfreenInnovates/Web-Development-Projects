@@ -9,7 +9,7 @@ import {
 
 const appSettings = {
   databaseURL:
-    "https://pantry-app-bc112-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    "{your firebase db url}",
 };
 
 const app = initializeApp(appSettings);
